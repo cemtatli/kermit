@@ -3,7 +3,7 @@
 import useStore from '@/store';
 
 import { toBlob, toPng, toSvg } from 'html-to-image';
-import { toast } from 'sonner';
+import { toast } from 'react-hot-toast';
 import { useHotkeys } from 'react-hotkeys-hook';
 
 import { DownloadIcon, CopyIcon, Link1Icon, Share2Icon } from '@radix-ui/react-icons';
@@ -28,7 +28,6 @@ export default function ExportOptions({ targetRef }) {
 			});
 			const img = new ClipboardItem({ 'image/png': imgBlob });
 			navigator.clipboard.write([img]);
-
 			toast.remove(loading);
 			toast.success('Image copied to clipboard!');
 		} catch (error) {

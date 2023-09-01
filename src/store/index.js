@@ -14,7 +14,7 @@ const useStore = create(
 			autoDetectLanguage: false,
 			fontSize: 16,
 			fontStyle: 'cascadiaCode',
-			padding: 64,
+			padding: 32,
 		}),
 		// STORAGE
 		{

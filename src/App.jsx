@@ -1,17 +1,29 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import useStore from '@/store';
+import { Resizable } from 're-resizable';
 import { fonts, themes } from '@/options';
 import { cn } from '@/lib/utils';
 
 import CodeBlock from '@/components/CodeBlock';
-import { Card, CardContent } from '@/components/ui/card';
+import Shortcut from '@/components/controls/Shortcut';
+import WidthMeasurement from '@/components/WidthMeasurement';
+import { Button } from '@/components/ui/button';
 import ExportOptions from '@/components/controls/Export';
+import { Card, CardContent } from '@/components/ui/card';
 import ThemeSelect from '@/components/controls/Theme';
 import LanguageSelect from '@/components/controls/Language';
-import Shortcut from './components/controls/Shortcut';
+import FontSelect from '@/components/controls/Font';
+import FontSize from '@/components/controls/FontSize';
+import Padding from '@/components/controls/Padding';
+import DarkMode from '@/components/controls/DarkMode';
+import Background from '@/components/controls/Background';
+import { CrossCircledIcon } from '@radix-ui/react-icons';
 
 const App = () => {
+	const [width, setWidth] = useState('auto');
+	const [showWidth, setShowWidth] = useState(false);
+
 	const theme = useStore((state) => state.theme);
 	const padding = useStore((state) => state.padding);
 	const fontStyle = useStore((state) => state.fontStyle);
@@ -30,7 +42,7 @@ const App = () => {
 			autoDetectLanguage: state.autoDetectLanguage === 'true',
 			darkMode: state.darkMode === 'true',
 			fontSize: Number(state.fontSize || 16),
-			padding: Number(state.padding || 64),
+			padding: Number(state.padding || 32),
 		});
 	}, []);
 
@@ -38,22 +50,49 @@ const App = () => {
 		<main className='dark h-screen relative flex items-center justify-center bg-neutral-950 text-white'>
 			<link rel='stylesheet' href={themes[theme].theme} crossOrigin='anonymous' />
 			<link rel='stylesheet' href={fonts[fontStyle].src} crossOrigin='anonymous' />
-			<div
-				ref={editorRef}
-				style={{ padding }}
-				className={cn(
-					'overflow-hidden mb-2 transition-all ease-in-out',
-					showBackground ? themes[theme].background : 'ring ring-neutral-900'
-				)}>
-				<CodeBlock />
-				<Card className='fixed bottom-16 py-5 mx-5 px-10 bg-neutral-900/90 backdrop-blur'>
-					<CardContent className='flex flex-wrap gap-5 items-center p-0'>
-						<ThemeSelect />
-						<LanguageSelect />
-						<ExportOptions />
-					</CardContent>
-				</Card>
-			</div>
+
+			<Resizable
+				enable={{ left: true, right: true }}
+				minWidth={padding * 2 + 500}
+				size={{ width }}
+				onResize={(e, dir, ref) => setWidth(ref.offsetWidth)}
+				onResizeStart={() => setShowWidth(true)}
+				onResizeStop={() => setShowWidth(false)}>
+				<div
+					className={cn(
+						'overflow-hidden mb-2 transition-all ease-out',
+						showBackground ? themes[theme].background : 'ring ring-neutral-900'
+					)}
+					style={{ padding }}
+					ref={editorRef}>
+					<CodeBlock />
+				</div>
+				<WidthMeasurement showWidth={showWidth} width={width} />
+				<div
+					className={cn(
+						'transition-opacity w-fit mx-auto -mt-4',
+						showWidth || width === 'auto' ? 'invisible opacity-0' : 'visible opacity-100'
+					)}>
+					<Button size='sm' onClick={() => setWidth('auto')} variant='ghost'>
+						Set to auto width
+					</Button>
+				</div>
+			</Resizable>
+			<Card className='fixed bottom-16 py-6 px-8 mx-6 bg-neutral-900/90 backdrop-blur'>
+				<CardContent className='flex flex-wrap gap-6 p-0'>
+					<ThemeSelect />
+					<LanguageSelect />
+					<FontSize />
+					<FontSelect />
+					<Padding />
+					<DarkMode />
+					<Background />
+					<div className='w-px bg-neutral-800' />
+					<div className='place-self-center'>
+						<ExportOptions targetRef={editorRef} />
+					</div>
+				</CardContent>
+			</Card>
 			<Shortcut />
 		</main>
 	);

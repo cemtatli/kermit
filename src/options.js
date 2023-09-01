@@ -102,10 +102,6 @@ export const fonts = {
 		name: 'JetBrains Mono',
 		src: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap',
 	},
-	inconsolata: {
-		name: 'Inconsolata',
-		src: 'https://fonts.googleapis.com/css2?family=Inconsolata&display=swap',
-	},
 	firaCode: {
 		name: 'Fira Code',
 		src: 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap',
