@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 
 import useStore from '@/store';
 
@@ -20,8 +20,13 @@ export default function ExportOptions({ targetRef }) {
 	const title = useStore((state) => state.title);
 
 	const copyImage = async () => {
-		const loading = toast.loading(`${title} Copying...`);
-
+		const loading = toast.loading(`${title} Copying...`, {
+			style: {
+				borderRadius: '10px',
+				background: '#333',
+				color: '#fff',
+			},
+		});
 		try {
 			const imgBlob = await toBlob(targetRef.current, {
 				pixelRatio: 2,
@@ -29,10 +34,24 @@ export default function ExportOptions({ targetRef }) {
 			const img = new ClipboardItem({ 'image/png': imgBlob });
 			navigator.clipboard.write([img]);
 			toast.remove(loading);
-			toast.success('Image copied to clipboard!');
+			toast('Image copied to clipboard!', {
+				icon: '👏',
+				style: {
+					borderRadius: '10px',
+					background: '#333',
+					color: '#fff',
+				},
+			});
 		} catch (error) {
 			toast.remove(loading);
-			toast.error('Something went wrong!');
+			toast.error('Something went wrong!', {
+				icon: '😔',
+				style: {
+					borderRadius: '10px',
+					background: '#333',
+					color: '#fff',
+				},
+			});
 		}
 	};
 
@@ -45,14 +64,34 @@ export default function ExportOptions({ targetRef }) {
 			}).toString();
 			navigator.clipboard.writeText(`${location.href}?${queryParams}`);
 
-			toast.success('Link copied to clipboard!');
+			toast.success('Link copied to clipboard!', {
+				icon: '👏',
+				style: {
+					borderRadius: '10px',
+					background: '#333',
+					color: '#fff',
+				},
+			});
 		} catch (error) {
-			toast.error('Something went wrong!');
+			toast.error('Something went wrong!', {
+				icon: '😔',
+				style: {
+					borderRadius: '10px',
+					background: '#333',
+					color: '#fff',
+				},
+			});
 		}
 	};
 
 	const saveImage = async (name, format) => {
-		const loading = toast.loading(`Exporting ${format} image`);
+		const loading = toast.loading(`Exporting ${format} image`, {
+			style: {
+				borderRadius: '10px',
+				background: '#333',
+				color: '#fff',
+			},
+		});
 
 		try {
 			let imgUrl, filename;
@@ -76,10 +115,24 @@ export default function ExportOptions({ targetRef }) {
 			a.click();
 
 			toast.remove(loading);
-			toast.success('Exported successfully!');
+			toast.success('Exported successfully!', {
+				icon: '👏',
+				style: {
+					borderRadius: '10px',
+					background: '#333',
+					color: '#fff',
+				},
+			});
 		} catch (error) {
 			toast.remove(loading);
-			toast.error('Something went wrong!');
+			toast.error('Something went wrong!', {
+				icon: '😔',
+				style: {
+					borderRadius: '10px',
+					background: '#333',
+					color: '#fff',
+				},
+			});
 		}
 	};
 
@@ -96,7 +149,7 @@ export default function ExportOptions({ targetRef }) {
 					Export
 				</Button>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className='dark backdrop-blur'>
+			<DropdownMenuContent className='dark backdrop-blur mb-2'>
 				<DropdownMenuItem className='gap-2.5 cursor-pointer' onClick={copyImage}>
 					<CopyIcon />
 					Copy Image
@@ -122,3 +175,7 @@ export default function ExportOptions({ targetRef }) {
 		</DropdownMenu>
 	);
 }
+
+ExportOptions.propTypes = {
+	targetRef: PropTypes.string,
+};

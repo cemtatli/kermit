@@ -18,7 +18,6 @@ import FontSize from '@/components/controls/FontSize';
 import Padding from '@/components/controls/Padding';
 import DarkMode from '@/components/controls/DarkMode';
 import Background from '@/components/controls/Background';
-import { CrossCircledIcon } from '@radix-ui/react-icons';
 
 const App = () => {
 	const [width, setWidth] = useState('auto');
@@ -50,7 +49,6 @@ const App = () => {
 		<main className='dark h-screen relative flex items-center justify-center bg-neutral-950 text-white'>
 			<link rel='stylesheet' href={themes[theme].theme} crossOrigin='anonymous' />
 			<link rel='stylesheet' href={fonts[fontStyle].src} crossOrigin='anonymous' />
-
 			<Resizable
 				enable={{ left: true, right: true }}
 				minWidth={padding * 2 + 500}
@@ -60,7 +58,7 @@ const App = () => {
 				onResizeStop={() => setShowWidth(false)}>
 				<div
 					className={cn(
-						'overflow-hidden mb-2 transition-all ease-out',
+						'overflow-hidden mb-2 transition-all ease-out rounded-lg',
 						showBackground ? themes[theme].background : 'ring ring-neutral-900'
 					)}
 					style={{ padding }}
@@ -70,7 +68,7 @@ const App = () => {
 				<WidthMeasurement showWidth={showWidth} width={width} />
 				<div
 					className={cn(
-						'transition-opacity w-fit mx-auto -mt-4',
+						'transition-opacity w-fit mx-auto -mt-2',
 						showWidth || width === 'auto' ? 'invisible opacity-0' : 'visible opacity-100'
 					)}>
 					<Button size='sm' onClick={() => setWidth('auto')} variant='ghost'>
@@ -78,7 +76,8 @@ const App = () => {
 					</Button>
 				</div>
 			</Resizable>
-			<Card className='fixed bottom-16 py-6 px-8 mx-6 bg-neutral-900/90 backdrop-blur'>
+
+			<Card className='fixed bottom-12 py-6 px-8 mx-6 bg-neutral-900/90 backdrop-blur'>
 				<CardContent className='flex flex-wrap gap-6 p-0'>
 					<ThemeSelect />
 					<LanguageSelect />

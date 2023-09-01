@@ -1,5 +1,5 @@
-import { languages } from '@/options';
 import useStore from '@/store';
+import { languages } from '@/options';
 
 import {
 	Select,

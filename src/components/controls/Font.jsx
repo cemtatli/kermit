@@ -1,6 +1,7 @@
-import { fonts } from '@/options';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import useStore from '@/store';
+import { fonts } from '@/options';
+
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function FontSelect() {
 	const fontStyle = useStore((state) => state.fontStyle);

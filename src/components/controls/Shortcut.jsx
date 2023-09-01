@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { KeyboardIcon } from '@radix-ui/react-icons';
 
 const ShortcutItem = ({ label, shortcut }) => {
 	return (
@@ -17,13 +16,17 @@ const ShortcutItem = ({ label, shortcut }) => {
 	);
 };
 
+ShortcutItem.propTypes = {
+	label: PropTypes.string.isRequired,
+	shortcut: PropTypes.string.isRequired,
+};
+
 const Shortcut = () => {
 	return (
 		<div className='absolute top-12 left-12'>
 			<Popover>
 				<PopoverTrigger className='text-sm font-medium flex items-center gap-x-2.5'>
-					<KeyboardIcon className='w-6 h-6' />
-					Keyboard Shortcuts
+					<img width={24} src='/kermit.png' alt='kermit' /> Keyboard Shortcuts
 				</PopoverTrigger>
 				<PopoverContent className='dark w-52 text-sm font-medium mt-2 transition'>
 					<div className='flex flex-col gap-4'>

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { cn } from '@/lib/utils';
 
 export default function WidthMeasurement({ showWidth, width }) {
@@ -11,7 +13,7 @@ export default function WidthMeasurement({ showWidth, width }) {
 				<div className='h-4 w-0.5 bg-white/20' />
 				<div className='h-px w-full bg-white/20' />
 			</div>
-			<span className='text-neutral-500 text-sm'>{width} px</span>
+			<span className='text-neutral-300 text-sm'>{width} px</span>
 			<div className='flex-1 flex items-center'>
 				<div className='h-px w-full bg-white/20' />
 				<div className='h-4 w-0.5 bg-white/20' />
@@ -19,3 +21,8 @@ export default function WidthMeasurement({ showWidth, width }) {
 		</div>
 	);
 }
+
+WidthMeasurement.propTypes = {
+	showWidth: PropTypes.number.isRequired,
+	width: PropTypes.number.isRequired,
+};

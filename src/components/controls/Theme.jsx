@@ -1,6 +1,6 @@
+import useStore from '@/store';
 import { themes } from '@/options';
 import { cn } from '@/lib/utils';
-import useStore from '@/store';
 
 import {
 	Select,

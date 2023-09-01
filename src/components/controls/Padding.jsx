@@ -3,7 +3,7 @@ import useStore from '@/store';
 import { Button } from '@/components/ui/button';
 
 export default function Padding() {
-	const paddingSizes = [{ value: 16 }, { value: 32 }, { value: 64 }, { value: 128 }];
+	const paddingSizes = [{ value: 16 }, { value: 32 }, { value: 48 }, { value: 96 }];
 
 	const updatePadding = (newPadding) => {
 		useStore.setState({ padding: newPadding });
