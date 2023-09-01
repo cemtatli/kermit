@@ -6,7 +6,7 @@ export default function DarkMode() {
 
 	return (
 		<div>
-			<label className='block mb-2 text-xs font-medium text-neutral-400'>DarkMode</label>
+			<label className='block mb-2 text-xs font-medium text-neutral-400'>Dark Mode</label>
 			<Switch
 				checked={darkMode}
 				onCheckedChange={(checked) => useStore.setState({ darkMode: checked })}
