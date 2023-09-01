@@ -13,7 +13,6 @@ import {
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuSeparator,
-	DropdownMenuShortcut,
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
@@ -102,12 +101,10 @@ export default function ExportOptions({ targetRef }) {
 				<DropdownMenuItem className='gap-2.5 cursor-pointer' onClick={copyImage}>
 					<CopyIcon />
 					Copy Image
-					<DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
 				</DropdownMenuItem>
 				<DropdownMenuItem className='gap-2.5 cursor-pointer' onClick={copyLink}>
 					<Link1Icon />
 					Copy Link
-					<DropdownMenuShortcut>⇧⌘C</DropdownMenuShortcut>
 				</DropdownMenuItem>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem
@@ -115,14 +112,12 @@ export default function ExportOptions({ targetRef }) {
 					onClick={() => saveImage(title, 'PNG')}>
 					<DownloadIcon />
 					Save as PNG
-					<DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
 				</DropdownMenuItem>
 				<DropdownMenuItem
 					className='gap-2.5 cursor-pointer'
 					onClick={() => saveImage(title, 'SVG')}>
 					<DownloadIcon />
 					Save as SVG
-					<DropdownMenuShortcut>⇧⌘S</DropdownMenuShortcut>
 				</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>
