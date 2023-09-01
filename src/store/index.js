@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-// INITIAL VALUES
+
 const useStore = create(
 	persist(
 		() => ({
@@ -16,7 +16,6 @@ const useStore = create(
 			fontStyle: 'cascadiaCode',
 			padding: 32,
 		}),
-		// STORAGE
 		{
 			name: 'user-preferences',
 		}

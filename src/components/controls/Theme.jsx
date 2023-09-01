@@ -20,7 +20,7 @@ export default function ThemeSelect() {
 				<SelectTrigger className='w-40'>
 					<SelectValue placeholder='Select Theme' />
 				</SelectTrigger>
-				<SelectContent className='dark'>
+				<SelectContent className='dark max-h-80 overflow-y-auto'>
 					{Object.entries(themes).map(([name, theme]) => (
 						<SelectItem key={name} value={name}>
 							<div className='flex gap-2 items-center'>

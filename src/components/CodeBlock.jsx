@@ -29,7 +29,7 @@ const CodeBlock = () => {
 		<section
 			className={cn(
 				'dark min-w-[500px]  rounded-lg border shadow-2xl',
-				store.darkMode ? 'bg-black/80 border-gray-500/40' : 'bg-white/80 border-gray-200/20'
+				store.darkMode ? 'bg-black/75 border-gray-500/40' : 'bg-white/80 border-gray-200/20'
 			)}>
 			<nav className='grid grid-cols-6 gap-2 items-center px-4 py-2'>
 				<div className='flex gap-1.5'>

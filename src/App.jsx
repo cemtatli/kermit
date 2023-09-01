@@ -76,7 +76,6 @@ const App = () => {
 					</Button>
 				</div>
 			</Resizable>
-
 			<Card className='fixed bottom-12 py-6 px-8 mx-6 bg-neutral-900/90 backdrop-blur'>
 				<CardContent className='flex flex-wrap gap-6 p-0'>
 					<ThemeSelect />

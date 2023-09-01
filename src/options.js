@@ -66,7 +66,7 @@ export const themes = {
 			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css',
 	},
 	coral: {
-		background: 'bg-gradient-to-br from-blue-400 to-emerald-400',
+		background: 'bg-gradient-to-br from-blue-300 to-emerald-600',
 		theme:
 			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css',
 	},
@@ -81,7 +81,7 @@ export const themes = {
 			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css',
 	},
 	sunshine: {
-		background: 'bg-gradient-to-br from-yellow-200 to-sunshine-400',
+		background: 'bg-gradient-to-br from-yellow-300 to-gray-400',
 		theme:
 			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/solarized-light.min.css',
 	},
@@ -92,7 +92,6 @@ export const themes = {
 	},
 	gotham: {
 		background: 'bg-gradient-to-br from-gray-700 via-gray-900 to-black',
-
 		theme:
 			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/black-metal-dark-funeral.min.css',
 	},
@@ -165,7 +164,7 @@ export const codeSnippets = [
 	},
 	{
 		language: 'javascript',
-		code: 'const calculateSum = (a, b) => a + b;\nconsole.log(calculateSum(5, 3));',
+		code: 'function calculateFactorial(n) {\n  if (n === 0 || n === 1) return 1;\n  return n * calculateFactorial(n - 1);\n}\nconsole.log(calculateFactorial(5));',
 	},
 	{
 		language: 'java',
