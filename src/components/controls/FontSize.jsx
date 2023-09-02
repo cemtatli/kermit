@@ -8,7 +8,10 @@ export default function FontSize() {
 		<div className='flex flex-col gap-2'>
 			<label className='block text-xs font-medium text-neutral-400'>Font Size</label>
 			<Input
+				aria-label='fontSize'
+				aria-labelledby='fontSize'
 				type='number'
+				name='fontSize'
 				className='dark w-16 bg-transparent'
 				min={12}
 				value={fontSize}

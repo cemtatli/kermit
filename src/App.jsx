@@ -68,7 +68,7 @@ const App = () => {
 				<WidthMeasurement showWidth={showWidth} width={width} />
 				<div
 					className={cn(
-						'transition-opacity w-fit mx-auto -mt-2',
+						'transition-opacity w-fit mx-auto -mt-6',
 						showWidth || width === 'auto' ? 'invisible opacity-0' : 'visible opacity-100'
 					)}>
 					<Button size='sm' onClick={() => setWidth('auto')} variant='ghost'>
@@ -76,21 +76,24 @@ const App = () => {
 					</Button>
 				</div>
 			</Resizable>
-			<Card className='fixed bottom-12 py-6 px-8 bg-neutral-900/80 backdrop-blur'>
-				<CardContent className='flex flex-wrap gap-6 p-0'>
-					<ThemeSelect />
-					<LanguageSelect />
-					<FontSize />
-					<FontSelect />
-					<Padding />
-					<DarkMode />
-					<Background />
-					<div className='w-px bg-neutral-800' />
-					<div className='place-self-center'>
-						<ExportOptions targetRef={editorRef} />
-					</div>
-				</CardContent>
-			</Card>
+			<div className='fixed bottom-10'>
+				<Card className='relative py-5 px-8 bg-neutral-900/80 backdrop-blur'>
+					<CardContent className='flex flex-wrap gap-5 p-0'>
+						<ThemeSelect />
+						<LanguageSelect />
+						<FontSize />
+						<FontSelect />
+						<Padding />
+						<DarkMode />
+						<Background />
+						<div className='w-px bg-neutral-800' />
+						<div className='place-self-center'>
+							<ExportOptions targetRef={editorRef} />
+						</div>
+					</CardContent>
+				</Card>
+				<img src='/logo.png' className='absolute w-16 right-4 -top-1/2 z-[-1]' />
+			</div>
 			<Shortcut />
 		</main>
 	);

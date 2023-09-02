@@ -9,6 +9,7 @@ export const languages = {
 	diff: 'Diff',
 	dockerfile: 'Docker',
 	elm: 'Elm',
+	react: 'React',
 	elixir: 'Elixir',
 	erlang: 'Erlang',
 	graphql: 'GraphQL',
@@ -179,12 +180,28 @@ export const codeSnippets = [
 		code: 'class Person\n  attr_accessor :name\n\n  def initialize(name)\n    @name = name\n  end\n\n  def say_hello\n    puts "Hello, #{@name}!"\n  end\nend',
 	},
 	{
+		language: 'dart',
+		code: 'void main() {\n  print("Hello, Dart!");\n}\n',
+	},
+	{
+		language: 'kotlin',
+		code: 'fun main() {\n  println("Hello, Kotlin!")\n}',
+	},
+	{
 		language: 'swift',
 		code: 'enum Color {\n  case red, green, blue\n}\nlet selectedColor = Color.blue\nprint("Selected color: \\(selectedColor)")',
 	},
 	{
+		language: 'css',
+		code: 'body {\n  font-family: Arial, sans-serif;\n  background-color: #f0f0f0;\n}\n\nh1 {\n  color: #333;\n  text-align: center;\n}\n\np {\n  font-size: 16px;\n  line-height: 1.5;\n}',
+	},
+	{
 		language: 'csharp',
 		code: 'using System;\n\nclass Program {\n  static void Main() {\n    Console.WriteLine("C# is awesome!");\n  }\n}',
+	},
+	{
+		language: 'typescript',
+		code: 'function greet(name: string): string {\n  return `Hello, ${name}!`;\n}',
 	},
 	{
 		language: 'php',

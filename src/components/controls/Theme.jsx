@@ -22,7 +22,7 @@ export default function ThemeSelect() {
 				</SelectTrigger>
 				<SelectContent className='dark max-h-80 overflow-y-auto'>
 					{Object.entries(themes).map(([name, theme]) => (
-						<SelectItem key={name} value={name}>
+						<SelectItem aria-label={name} key={name} value={name}>
 							<div className='flex gap-2 items-center'>
 								<div className={cn('h-4 w-4 rounded-full', theme.background)} />
 								<span className='capitalize'>{name}</span>
