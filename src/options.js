@@ -1,110 +1,109 @@
 export const languages = {
-	bash: 'Bash',
-	c: 'C',
-	'c++': 'C++',
-	csharp: 'C#',
-	clojure: 'Clojure',
-	crystal: 'Crystal',
-	css: 'CSS',
-	diff: 'Diff',
-	dockerfile: 'Docker',
-	elm: 'Elm',
-	react: 'React',
-	elixir: 'Elixir',
-	erlang: 'Erlang',
-	graphql: 'GraphQL',
-	go: 'Go',
-	haskell: 'Haskell',
-	html: 'HTML',
-	java: 'Java',
-	javascript: 'JavaScript/JSX',
-	json: 'JSON',
-	kotlin: 'Kotlin',
-	lisp: 'Lisp',
-	lua: 'Lua',
-	markdown: 'Markdown',
-	matlab: 'MATLAB/Octave',
-	pascal: 'Pascal',
-	plaintext: 'Plaintext',
-	powershell: 'Powershell',
-	objectivec: 'Objective C',
-	php: 'PHP',
-	python: 'Python',
-	ruby: 'Ruby',
-	rust: 'Rust',
-	scala: 'Scala',
-	scss: 'SCSS',
-	sql: 'SQL',
-	swift: 'Swift',
-	toml: 'TOML',
-	typescript: 'TypeScript/TSX',
-	xml: 'XML',
-	yaml: 'YAML',
+  bash: "Bash",
+  c: "C",
+  "c++": "C++",
+  csharp: "C#",
+  clojure: "Clojure",
+  crystal: "Crystal",
+  css: "CSS",
+  diff: "Diff",
+  dockerfile: "Docker",
+  elm: "Elm",
+  react: "React",
+  elixir: "Elixir",
+  erlang: "Erlang",
+  graphql: "GraphQL",
+  go: "Go",
+  dart: "Dart",
+  haskell: "Haskell",
+  html: "HTML",
+  java: "Java",
+  javascript: "JavaScript/JSX",
+  json: "JSON",
+  kotlin: "Kotlin",
+  lisp: "Lisp",
+  lua: "Lua",
+  markdown: "Markdown",
+  matlab: "MATLAB/Octave",
+  pascal: "Pascal",
+  plaintext: "Plaintext",
+  powershell: "Powershell",
+  objectivec: "Objective C",
+  php: "PHP",
+  python: "Python",
+  ruby: "Ruby",
+  rust: "Rust",
+  scala: "Scala",
+  scss: "SCSS",
+  sql: "SQL",
+  swift: "Swift",
+  toml: "TOML",
+  typescript: "TypeScript/TSX",
+  xml: "XML",
+  yaml: "YAML",
 };
 
 export const themes = {
-	kermit: {
-		background: 'bg-gradient-to-br from-yellow-400 to-green-400',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css',
-	},
-	oceanic: {
-		background: 'bg-gradient-to-tl from-green-300 via-blue-500 to-purple-600',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/material-darker.min.css',
-	},
-	candy: {
-		background: 'bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400',
-		theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/chalk.min.css',
-	},
-	sublime: {
-		background: 'bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500',
-		theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css',
-	},
-	horizon: {
-		background: 'bg-gradient-to-br from-orange-500 to-yellow-300',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css',
-	},
-	coral: {
-		background: 'bg-gradient-to-br from-blue-300 to-emerald-600',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css',
-	},
-	peach: {
-		background: 'bg-gradient-to-br from-rose-400 to-orange-300',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/zenburn.min.css',
-	},
-	hyper: {
-		background: 'bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css',
-	},
-	sunshine: {
-		background: 'bg-gradient-to-br from-yellow-300 to-gray-400',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/solarized-light.min.css',
-	},
-	flamingo: {
-		background: 'bg-gradient-to-br from-pink-400 to-pink-600',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/panda-syntax-dark.min.css',
-	},
-	gotham: {
-		background: 'bg-gradient-to-br from-gray-700 via-gray-900 to-black',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/black-metal-dark-funeral.min.css',
-	},
-	autumn: {
-		background: 'bg-gradient-to-br from-orange-300 to-red-700',
-		theme:
-			'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/paraiso-light.min.css',
-	},
-	ice: {
-		background: 'bg-gradient-to-br from-rose-100 to-teal-100',
-		theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/ashes.min.css',
-	},
+  kermit: {
+    background: "bg-gradient-to-br from-yellow-400 to-green-400",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css",
+  },
+  oceanic: {
+    background: "bg-gradient-to-tl from-green-300 via-blue-500 to-purple-600",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/material-darker.min.css",
+  },
+  pandora: {
+    background: "bg-gradient-to-r from-green-200 via-green-400 to-purple-500",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/chalk.min.css",
+  },
+  candy: {
+    background: "bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/chalk.min.css",
+  },
+  sublime: {
+    background: "bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
+  },
+  valentine: {
+    background: "bg-gradient-to-r from-red-300 via-orange-300 to-red-500",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
+  },
+  horizon: {
+    background: "bg-gradient-to-br from-orange-500 to-yellow-300",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css",
+  },
+  coral: {
+    background: "bg-gradient-to-br from-blue-300 to-emerald-600",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css",
+  },
+  peach: {
+    background: "bg-gradient-to-br from-rose-400 to-orange-300",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/zenburn.min.css",
+  },
+  hyper: {
+    background: "bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css",
+  },
+  sunshine: {
+    background: "bg-gradient-to-br from-yellow-300 to-gray-400",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/solarized-light.min.css",
+  },
+  flamingo: {
+    background: "bg-gradient-to-br from-pink-400 to-pink-600",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/panda-syntax-dark.min.css",
+  },
+  gotham: {
+    background: "bg-gradient-to-br from-gray-700 via-gray-900 to-black",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/black-metal-dark-funeral.min.css",
+  },
+  autumn: {
+    background: "bg-gradient-to-br from-orange-300 to-red-700",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/paraiso-light.min.css",
+  },
+  ice: {
+    background: "bg-gradient-to-br from-rose-100 to-teal-100",
+    theme: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/ashes.min.css",
+  },
 };
 
 export const fonts = {
