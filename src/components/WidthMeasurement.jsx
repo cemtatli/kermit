@@ -23,6 +23,6 @@ export default function WidthMeasurement({ showWidth, width }) {
 }
 
 WidthMeasurement.propTypes = {
-	showWidth: PropTypes.number.isRequired,
-	width: PropTypes.number.isRequired,
+	showWidth: PropTypes.bool.isRequired,
+	width: PropTypes.string.isRequired,
 };

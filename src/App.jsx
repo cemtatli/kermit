@@ -63,7 +63,7 @@ const App = () => {
         <div
           className={cn(
             "overflow-hidden mb-2 transition-all ease-out",
-            radius ? radius : "",
+            radius ? radius : "rounded",
             showBackground ? themes[theme].background : "ring ring-neutral-900"
           )}
           style={{ padding }}
