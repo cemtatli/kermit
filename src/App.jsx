@@ -50,59 +50,64 @@ const App = () => {
 
   return (
     <main className="dark h-screen relative flex items-center justify-center bg-neutral-950 text-white">
-      <link rel="stylesheet" href={themes[theme].theme} crossOrigin="anonymous" />
-      <link rel="stylesheet" href={fonts[fontStyle].src} crossOrigin="anonymous" />
-      <Resizable
-        enable={{ left: true, right: true }}
-        minWidth={padding * 2 + 500}
-        size={{ width }}
-        onResize={(e, dir, ref) => setWidth(ref.offsetWidth)}
-        onResizeStart={() => setShowWidth(true)}
-        onResizeStop={() => setShowWidth(false)}
-      >
-        <div
-          className={cn(
-            "overflow-hidden mb-2 transition-all ease-out",
-            radius ? radius : "rounded",
-            showBackground ? themes[theme].background : "ring ring-neutral-900"
-          )}
-          style={{ padding }}
-          ref={editorRef}
+      <div className="hidden 2xl:flex items-center justify-center">
+        <link rel="stylesheet" href={themes[theme].theme} crossOrigin="anonymous" />
+        <link rel="stylesheet" href={fonts[fontStyle].src} crossOrigin="anonymous" />
+        <Resizable
+          enable={{ left: true, right: true }}
+          minWidth={padding * 2 + 500}
+          size={{ width }}
+          onResize={(e, dir, ref) => setWidth(ref.offsetWidth)}
+          onResizeStart={() => setShowWidth(true)}
+          onResizeStop={() => setShowWidth(false)}
         >
-          <CodeBlock />
+          <div
+            className={cn(
+              "overflow-hidden mb-2 transition-all ease-out",
+              radius ? radius : "rounded",
+              showBackground ? themes[theme].background : "ring ring-neutral-900"
+            )}
+            style={{ padding }}
+            ref={editorRef}
+          >
+            <CodeBlock />
+          </div>
+          <WidthMeasurement showWidth={showWidth} width={width} />
+          <div
+            className={cn(
+              "transition-opacity w-fit mx-auto -mt-6",
+              showWidth || width === "auto" ? "invisible opacity-0" : "visible opacity-100"
+            )}
+          >
+            <Button size="sm" onClick={() => setWidth("auto")} variant="ghost">
+              Set to auto width
+            </Button>
+          </div>
+        </Resizable>
+        <div className="fixed bottom-10">
+          <Card className="relative py-5 px-8 bg-neutral-900/80 backdrop-blur">
+            <CardContent className="flex flex-wrap gap-5 p-0">
+              <ThemeSelect />
+              <LanguageSelect />
+              <FontSize />
+              <FontSelect />
+              <Radius />
+              <Padding />
+              <DarkMode />
+              <Background />
+              <div className="w-px bg-neutral-800" />
+              <div className="place-self-center">
+                <ExportOptions targetRef={editorRef} />
+              </div>
+            </CardContent>
+          </Card>
+          <img src="/logo.png" className="hidden 2xl:block absolute w-16 right-4 -top-1/2 z-[-1]" />
         </div>
-        <WidthMeasurement showWidth={showWidth} width={width} />
-        <div
-          className={cn(
-            "transition-opacity w-fit mx-auto -mt-6",
-            showWidth || width === "auto" ? "invisible opacity-0" : "visible opacity-100"
-          )}
-        >
-          <Button size="sm" onClick={() => setWidth("auto")} variant="ghost">
-            Set to auto width
-          </Button>
-        </div>
-      </Resizable>
-      <div className="fixed bottom-10">
-        <Card className="relative py-5 px-8 bg-neutral-900/80 backdrop-blur">
-          <CardContent className="flex flex-wrap gap-5 p-0">
-            <ThemeSelect />
-            <LanguageSelect />
-            <FontSize />
-            <FontSelect />
-            <Radius />
-            <Padding />
-            <DarkMode />
-            <Background />
-            <div className="w-px bg-neutral-800" />
-            <div className="place-self-center">
-              <ExportOptions targetRef={editorRef} />
-            </div>
-          </CardContent>
-        </Card>
-        <img src="/logo.png" className="absolute w-16 right-4 -top-1/2 z-[-1]" />
+        <Shortcut />
       </div>
-      <Shortcut />
+      <span className="2xl:hidden text-center p-10">
+        Kermit currently does not support this resolution in a healthy way. <br /> You can use it in desktop resolution.
+      </span>
     </main>
   );
 };
