@@ -6,7 +6,7 @@ const useStore = create(
   persist(
     () => ({
       code: "",
-      title: "Untitled",
+      title: "Type title",
       theme: "kermit",
       darkMode: true,
       showBackground: true,
