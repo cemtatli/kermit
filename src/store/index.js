@@ -1,25 +1,24 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-
 const useStore = create(
   persist(
     () => ({
-      code: "",
-      title: "Type title",
-      theme: "kermit",
+      code: '',
+      title: 'Type title',
+      theme: 'kermit',
       darkMode: true,
       showBackground: true,
-      language: "plaintext",
-      radius: 16,
+      language: 'plaintext',
+      radius: 'rounded-none',
       autoDetectLanguage: false,
       fontSize: 16,
-      fontStyle: "cascadiaCode",
+      fontStyle: 'cascadiaCode',
       padding: 32,
     }),
     {
-      name: "user-preferences",
-    }
-  )
-);
+      name: 'kermit-settings',
+    },
+  ),
+)
 export default useStore;

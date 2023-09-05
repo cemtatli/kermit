@@ -63,9 +63,9 @@ const App = () => {
         >
           <div
             className={cn(
-              "overflow-hidden mb-2 transition-all ease-out",
-              radius ? radius : "rounded",
-              showBackground ? themes[theme].background : "ring ring-neutral-900"
+              'overflow-hidden mb-2 transition-all ease-out',
+              radius ? radius : 'rounded',
+              showBackground ? themes[theme].background : 'ring ring-neutral-900',
             )}
             style={{ padding }}
             ref={editorRef}
@@ -75,17 +75,17 @@ const App = () => {
           <WidthMeasurement showWidth={showWidth} width={width} />
           <div
             className={cn(
-              "transition-opacity w-fit mx-auto -mt-6",
-              showWidth || width === "auto" ? "invisible opacity-0" : "visible opacity-100"
+              'transition-opacity w-fit mx-auto -mt-6',
+              showWidth || width === 'auto' ? 'invisible opacity-0' : 'visible opacity-100',
             )}
           >
-            <Button size="sm" onClick={() => setWidth("auto")} variant="ghost">
+            <Button size="sm" onClick={() => setWidth('auto')} variant="ghost">
               Set to auto width
             </Button>
           </div>
         </Resizable>
         <div className="fixed bottom-10">
-          <Card className="relative py-5 px-8 bg-neutral-900/80 backdrop-blur">
+          <Card className="relative py-5 px-8 bg-neutral-900/50 backdrop-blur-xl shadow-inner shadow-neutral-950">
             <CardContent className="flex flex-wrap gap-5 p-0">
               <ThemeSelect />
               <LanguageSelect />
@@ -109,6 +109,6 @@ const App = () => {
         Kermit currently does not support this resolution in a healthy way. <br /> You can use it in desktop resolution.
       </span>
     </main>
-  );
+  )
 };
 export default App;

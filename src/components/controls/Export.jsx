@@ -144,7 +144,7 @@ export default function ExportOptions({ targetRef }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="gap-x-2.5">
+        <Button className="gap-x-3">
           <Share2Icon />
           Export
         </Button>
@@ -159,17 +159,17 @@ export default function ExportOptions({ targetRef }) {
           Copy Link
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="gap-2.5 cursor-pointer" onClick={() => saveImage(title, "PNG")}>
+        <DropdownMenuItem className="gap-2.5 cursor-pointer" onClick={() => saveImage(title, 'PNG')}>
           <DownloadIcon />
           Save PNG
         </DropdownMenuItem>
-        <DropdownMenuItem className="gap-2.5 cursor-pointer" onClick={() => saveImage(title, "SVG")}>
+        <DropdownMenuItem className="gap-2.5 cursor-pointer" onClick={() => saveImage(title, 'SVG')}>
           <DownloadIcon />
           Save SVG
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }
 
 ExportOptions.propTypes = {
