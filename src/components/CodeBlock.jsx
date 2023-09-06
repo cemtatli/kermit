@@ -30,7 +30,8 @@ const CodeBlock = () => {
       className={cn(
         'dark min-w-[500px]  rounded-lg border shadow-2xl',
         store.darkMode ? 'bg-black/75 border-gray-500/40' : 'bg-white/80 border-gray-200/20',
-      )}>
+      )}
+    >
       <nav className="grid grid-cols-6 gap-2 items-center px-4 py-2">
         <div className="flex gap-1.5">
           <div className="bg-red-500 w-2.5 h-2.5 rounded-full" />
@@ -44,19 +45,26 @@ const CodeBlock = () => {
             onClick={e => e.target.select()}
             onChange={e => useStore.setState({ title: e.target.value })}
             spellCheck={false}
-            className={cn('bg-transparent focus:outline-none text-sm text-center font-medium text-neutral-400')}
+            className={cn(
+              'bg-transparent w-full focus:outline-none text-[13px] text-center font-medium text-neutral-400',
+            )}
           />
         </div>
       </nav>
       <div
         className={cn(
           'px-4 pb-4 pt-2',
-          store.darkMode ? 'brightness-110' : 'text-neutral-800 brightness-50 saturate-150 contrast-150',
-        )}>
+          store.darkMode
+            ? 'brightness-110'
+            : 'text-neutral-800 brightness-50 saturate-150 contrast-150',
+        )}
+      >
         <Editor
           value={store.code}
           onValueChange={code => useStore.setState({ code })}
-          highlight={code => hljs.highlight(code, { language: store.language || 'plaintext' }).value}
+          highlight={code =>
+            hljs.highlight(code, { language: store.language || 'plaintext' }).value
+          }
           style={{
             fontFamily: fonts[store.fontStyle].name,
             fontSize: store.fontSize,

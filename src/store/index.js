@@ -12,7 +12,7 @@ const useStore = create(
       language: 'plaintext',
       radius: 'rounded-none',
       autoDetectLanguage: false,
-      fontSize: 16,
+      fontSize: 15,
       fontStyle: 'cascadiaCode',
       padding: 32,
     }),
