@@ -14,7 +14,7 @@ const useStore = create(
       autoDetectLanguage: false,
       fontSize: 15,
       fontStyle: 'cascadiaCode',
-      padding: 32,
+      padding: 24,
     }),
     {
       name: 'kermit-settings',

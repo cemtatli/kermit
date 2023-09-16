@@ -30,7 +30,7 @@ const shortcutsData = [
 
 const Shortcut = () => {
 	return (
-		<div className='absolute top-12 left-12'>
+		<div className='absolute top-12 right-12'>
 			<Popover>
 				<PopoverTrigger className='text-sm font-medium flex items-center gap-x-2.5'>
 					<KeyboardIcon className='w-5 h-5' />

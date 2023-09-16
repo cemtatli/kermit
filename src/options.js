@@ -58,9 +58,17 @@ export const themes = {
     background: 'bg-gradient-to-r from-green-200 via-green-400 to-purple-500',
     theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/chalk.min.css',
   },
+  breeze: {
+    background: 'bg-gradient-to-br from-blue-400 to-purple-500',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css',
+  },
   candy: {
     background: 'bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400',
     theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/chalk.min.css',
+  },
+  fire: {
+    background: 'bg-gradient-to-br from-red-400 to-yellow-400',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css',
   },
   sublime: {
     background: 'bg-gradient-to-br from-rose-400 via-fuchsia-500 to-indigo-500',
@@ -160,6 +168,10 @@ export const fonts = {
   redHatMono: {
     name: 'Red Hat Mono',
     src: 'https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap',
+  },
+  inconsolata: {
+    name: 'Inconsolata',
+    src: 'https://fonts.googleapis.com/css2?family=Inconsolata&display=swap',
   },
 }
 
