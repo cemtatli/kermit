@@ -1,12 +1,18 @@
-import useStore from '@/store';
-import { fonts } from '@/options';
+import useStore from '@/store'
+import { fonts } from '@/options'
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 export default function FontSelect() {
-	const fontStyle = useStore((state) => state.fontStyle);
+  const fontStyle = useStore(state => state.fontStyle)
 
-	return (
+  return (
     <div>
       <label className="block mb-2 text-xs font-medium text-neutral-400">Font</label>
       <Select value={fontStyle} onValueChange={fontStyle => useStore.setState({ fontStyle })}>

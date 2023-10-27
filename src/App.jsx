@@ -1,52 +1,52 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 
-import useStore from '@/store';
-import { Resizable } from 're-resizable';
-import { fonts, themes } from '@/options';
-import { cn } from '@/lib/utils';
+import useStore from '@/store'
+import { Resizable } from 're-resizable'
+import { fonts, themes } from '@/options'
+import { cn } from '@/lib/utils'
 
-import CodeBlock from '@/components/CodeBlock';
-import Shortcut from '@/components/controls/Shortcut';
-import WidthMeasurement from '@/components/WidthMeasurement';
-import { Button } from '@/components/ui/button';
-import ExportOptions from '@/components/controls/Export';
-import { Card, CardContent } from '@/components/ui/card';
-import ThemeSelect from '@/components/controls/Theme';
-import LanguageSelect from '@/components/controls/Language';
-import FontSelect from '@/components/controls/Font';
-import FontSize from '@/components/controls/FontSize';
-import Padding from '@/components/controls/Padding';
-import DarkMode from '@/components/controls/DarkMode';
-import Background from '@/components/controls/Background';
-import Radius from "@/components/controls/Radius";
+import CodeBlock from '@/components/CodeBlock'
+import Shortcut from '@/components/controls/Shortcut'
+import WidthMeasurement from '@/components/WidthMeasurement'
+import { Button } from '@/components/ui/button'
+import ExportOptions from '@/components/controls/Export'
+import { Card, CardContent } from '@/components/ui/card'
+import ThemeSelect from '@/components/controls/Theme'
+import LanguageSelect from '@/components/controls/Language'
+import FontSelect from '@/components/controls/Font'
+import FontSize from '@/components/controls/FontSize'
+import Padding from '@/components/controls/Padding'
+import DarkMode from '@/components/controls/DarkMode'
+import Background from '@/components/controls/Background'
+import Radius from '@/components/controls/Radius'
 
 const App = () => {
-  const [width, setWidth] = useState("auto");
-  const [showWidth, setShowWidth] = useState(false);
+  const [width, setWidth] = useState('auto')
+  const [showWidth, setShowWidth] = useState(false)
 
-  const theme = useStore((state) => state.theme);
-  const padding = useStore((state) => state.padding);
-  const radius = useStore((state) => state.radius);
-  const fontStyle = useStore((state) => state.fontStyle);
-  const showBackground = useStore((state) => state.showBackground);
+  const theme = useStore(state => state.theme)
+  const padding = useStore(state => state.padding)
+  const radius = useStore(state => state.radius)
+  const fontStyle = useStore(state => state.fontStyle)
+  const showBackground = useStore(state => state.showBackground)
 
-  const editorRef = useRef(null);
+  const editorRef = useRef(null)
 
   useEffect(() => {
-    const queryParams = new URLSearchParams(location.search);
-    if (queryParams.size === 0) return;
-    const state = Object.fromEntries(queryParams);
+    const queryParams = new URLSearchParams(location.search)
+    if (queryParams.size === 0) return
+    const state = Object.fromEntries(queryParams)
 
     useStore.setState({
       ...state,
-      code: state.code ? atob(state.code) : "",
-      autoDetectLanguage: state.autoDetectLanguage === "true",
-      darkMode: state.darkMode === "true",
+      code: state.code ? atob(state.code) : '',
+      autoDetectLanguage: state.autoDetectLanguage === 'true',
+      darkMode: state.darkMode === 'true',
       fontSize: Number(state.fontSize || 16),
       padding: Number(state.padding || 32),
-      radius: state.padding || "rounded",
-    });
-  }, []);
+      radius: state.padding || 'rounded',
+    })
+  }, [])
 
   return (
     <main className="dark h-screen relative flex items-center justify-center bg-neutral-950 text-white">
@@ -105,10 +105,11 @@ const App = () => {
         </div>
         <Shortcut />
       </div>
-      <span className="2xl:hidden text-center p-10">
-        Kermit currently does not support this resolution in a healthy way. <br /> You can use it in desktop resolution.
+      <span className="2xl:hidden text-center text-xl p-10">
+        Kermit currently does not support this resolution in a healthy way. <br /> You can use it in
+        desktop resolution.
       </span>
     </main>
   )
-};
-export default App;
+}
+export default App
