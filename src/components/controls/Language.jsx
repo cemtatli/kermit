@@ -23,7 +23,7 @@ export default function LanguageSelect() {
 	};
 	return (
 		<div>
-			<label className='block mb-2 text-xs font-medium text-neutral-400'>Language</label>
+			<label className='block mb-2 text-xs font-medium text-zinc-400'>Language</label>
 			<Select value={language} onValueChange={handleChange}>
 				<SelectTrigger className='w-44'>
 					{autoDetectLanguage && <ShadowIcon className='animate-spin mr-1' />}

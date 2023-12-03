@@ -9,7 +9,7 @@ export default function ThemeSelect() {
 
   return (
     <div className="space-y-2">
-      <label className="block text-xs font-medium text-neutral-400">Theme</label>
+      <label className="block text-xs font-medium text-zinc-400">Theme</label>
       <Select value={theme} onValueChange={theme => useStore.setState({ theme })}>
         <SelectTrigger className="w-40">
           <SelectValue placeholder="Select Theme" />

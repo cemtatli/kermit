@@ -42,7 +42,7 @@ const CodeBlock = () => {
             onChange={e => useStore.setState({ title: e.target.value })}
             spellCheck={false}
             className={cn(
-              'bg-transparent w-full focus:outline-none text-[13px] text-center font-medium text-neutral-400',
+              'bg-transparent w-full focus:outline-none text-[13px] text-center font-medium text-zinc-400',
             )}
           />
         </div>
@@ -52,7 +52,7 @@ const CodeBlock = () => {
           'px-4 pb-4 pt-2',
           store.darkMode
             ? 'brightness-110'
-            : 'text-neutral-800 brightness-50 saturate-150 contrast-150',
+            : 'text-zinc-800 brightness-50 saturate-150 contrast-150',
         )}
       >
         <Editor

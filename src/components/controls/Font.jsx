@@ -14,7 +14,7 @@ export default function FontSelect() {
 
   return (
     <div>
-      <label className="block mb-2 text-xs font-medium text-neutral-400">Font</label>
+      <label className="block mb-2 text-xs font-medium text-zinc-400">Font</label>
       <Select value={fontStyle} onValueChange={fontStyle => useStore.setState({ fontStyle })}>
         <SelectTrigger className="w-40">
           <SelectValue placeholder="Select Font" />

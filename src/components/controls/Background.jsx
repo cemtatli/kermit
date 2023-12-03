@@ -6,7 +6,7 @@ export default function Background() {
 
 	return (
 		<div>
-			<label className='block mb-2 text-xs font-medium text-neutral-400'>Background</label>
+			<label className='block mb-2 text-xs font-medium text-zinc-400'>Background</label>
 			<Switch
 				checked={showBg}
 				onCheckedChange={(checked) => useStore.setState({ showBackground: checked })}

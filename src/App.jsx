@@ -49,7 +49,7 @@ const App = () => {
   }, [])
 
   return (
-    <main className="dark h-screen relative flex items-center justify-center bg-neutral-950 text-white">
+    <main className="dark h-screen relative flex items-center justify-center bg-zinc-950 text-white">
       <div className="hidden 2xl:flex items-center justify-center">
         <link rel="stylesheet" href={themes[theme].theme} crossOrigin="anonymous" />
         <link rel="stylesheet" href={fonts[fontStyle].src} crossOrigin="anonymous" />
@@ -65,7 +65,7 @@ const App = () => {
             className={cn(
               'overflow-hidden mb-2 transition-all ease-out',
               radius ? radius : 'rounded',
-              showBackground ? themes[theme].background : 'ring ring-neutral-900',
+              showBackground ? themes[theme].background : 'ring ring-zinc-900',
             )}
             style={{ padding }}
             ref={editorRef}
@@ -85,7 +85,7 @@ const App = () => {
           </div>
         </Resizable>
         <div className="fixed bottom-10">
-          <Card className="relative py-5 px-8 bg-neutral-900/50 backdrop-blur-xl shadow-inner shadow-neutral-950">
+          <Card className="relative py-5 px-8 bg-zinc-900/50 backdrop-blur-xl shadow-inner shadow-zinc-950">
             <CardContent className="flex flex-wrap gap-5 p-0">
               <ThemeSelect />
               <LanguageSelect />
@@ -95,7 +95,7 @@ const App = () => {
               <Padding />
               <DarkMode />
               <Background />
-              <div className="w-px bg-neutral-800" />
+              <div className="w-px bg-zinc-800" />
               <div className="place-self-center">
                 <ExportOptions targetRef={editorRef} />
               </div>

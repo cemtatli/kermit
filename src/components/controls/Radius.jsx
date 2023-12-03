@@ -15,7 +15,7 @@ export default function Radius() {
 
   return (
     <div>
-      <label className="block mb-2 text-xs font-medium text-neutral-400">Radius (px)</label>
+      <label className="block mb-2 text-xs font-medium text-zinc-400">Radius (px)</label>
       <div className="flex items-center gap-1">
         {radiusSizes.map((size) => (
           <Button size={"sm"} variant={"ghost"} key={size.value} onClick={() => updateRadius(size.value)}>

@@ -8,7 +8,7 @@ const ShortcutItem = ({ label, shortcut }) => {
 			{label}
 			<span
 				className={
-					'px-2 py-1.5 text-xs font-semibold text-neutral-800 shadow-inner group-hover:shadow-neutral-500 transition-colors bg-neutral-100 border border-neutral-200 rounded-lg dark:bg-neutral-600 dark:text-neutral-100 dark:border-neutral-500'
+					'px-2 py-1.5 text-xs font-semibold text-zinc-800 shadow-inner group-hover:shadow-zinc-500 transition-colors bg-zinc-100 border border-zinc-200 rounded-lg dark:bg-zinc-600 dark:text-zinc-100 dark:border-zinc-500'
 				}>
 				{shortcut.join(' + ')}
 			</span>

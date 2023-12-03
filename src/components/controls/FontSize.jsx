@@ -6,7 +6,7 @@ export default function FontSize() {
 
 	return (
 		<div className='flex flex-col gap-2'>
-			<label className='block text-xs font-medium text-neutral-400'>Font Size</label>
+			<label className='block text-xs font-medium text-zinc-400'>Font Size</label>
 			<Input
 				aria-label='fontSize'
 				aria-labelledby='fontSize'

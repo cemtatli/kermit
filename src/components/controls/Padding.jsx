@@ -11,7 +11,7 @@ export default function Padding() {
 
   return (
     <div>
-      <label className="block mb-2 text-xs font-medium text-neutral-400">Padding (px)</label>
+      <label className="block mb-2 text-xs font-medium text-zinc-400">Padding (px)</label>
       <div className="flex items-center gap-1">
         {paddingSizes.map((size) => (
           <Button size={"sm"} variant={"ghost"} key={size.value} onClick={() => updatePadding(size.value)}>
