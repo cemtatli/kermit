@@ -41,18 +41,15 @@ export const languages = {
 export const themes = {
   kermit: {
     background: 'bg-gradient-to-br from-yellow-400 to-green-400',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css',
   },
   oceanic: {
     background: 'bg-gradient-to-tl from-green-300 via-blue-500 to-purple-600',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/material-darker.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/material-darker.min.css',
   },
   lakka: {
     background: 'bg-gradient-to-b from-sky-400 to-pink-600',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/material-darker.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/material-darker.min.css',
   },
   pandora: {
     background: 'bg-gradient-to-r from-green-200 via-green-400 to-purple-500',
@@ -80,43 +77,35 @@ export const themes = {
   },
   horizon: {
     background: 'bg-gradient-to-br from-orange-500 to-yellow-300',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css',
   },
   coral: {
     background: 'bg-gradient-to-br from-blue-300 to-emerald-600',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css',
   },
   peach: {
     background: 'bg-gradient-to-br from-rose-400 to-orange-300',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/zenburn.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/zenburn.min.css',
   },
   hyper: {
     background: 'bg-gradient-to-br from-fuchsia-500 via-red-600 to-orange-400',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css',
   },
   sunshine: {
     background: 'bg-gradient-to-br from-yellow-300 to-gray-400',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/solarized-light.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/solarized-light.min.css',
   },
   flamingo: {
     background: 'bg-gradient-to-br from-pink-400 to-pink-600',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/panda-syntax-dark.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/panda-syntax-dark.min.css',
   },
   gotham: {
     background: 'bg-gradient-to-br from-gray-700 via-gray-900 to-black',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/black-metal-dark-funeral.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/base16/black-metal-dark-funeral.min.css',
   },
   autumn: {
     background: 'bg-gradient-to-br from-orange-300 to-red-700',
-    theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/paraiso-light.min.css',
+    theme: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/paraiso-light.min.css',
   },
   ice: {
     background: 'bg-gradient-to-br from-rose-100 to-teal-100',
@@ -157,79 +146,75 @@ export const fonts = {
     name: 'Space Mono',
     src: 'https://fonts.googleapis.com/css2?family=Space+Mono&display=swap',
   },
-  anonymousPro: {
-    name: 'Anonymous Pro',
-    src: 'https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap',
-  },
-  oxygenMono: {
-    name: 'Oxygen Mono',
-    src: 'https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap',
-  },
-  redHatMono: {
-    name: 'Red Hat Mono',
-    src: 'https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap',
-  },
-  inconsolata: {
-    name: 'Inconsolata',
-    src: 'https://fonts.googleapis.com/css2?family=Inconsolata&display=swap',
-  },
 }
 
 export const codeSnippets = [
-	{
-		language: 'python',
-		code: 'def greet(name):\n  return f"Hello, {name}!"',
-	},
-	{
-		language: 'javascript',
-		code: 'function calculateFactorial(n) {\n  if (n === 0 || n === 1) return 1;\n  return n * calculateFactorial(n - 1);\n}\nconsole.log(calculateFactorial(5));',
-	},
-	{
-		language: 'java',
-		code: 'public class HelloWorld {\n  public static void main(String[] args) {\n    System.out.println("Hello, World!");\n  }\n}',
-	},
-	{
-		language: 'c',
-		code: '#include <stdio.h>\n\nint main() {\n  printf("C Programming is fun!\\n");\n  return 0;\n}',
-	},
-	{
-		language: 'ruby',
-		code: 'class Person\n  attr_accessor :name\n\n  def initialize(name)\n    @name = name\n  end\n\n  def say_hello\n    puts "Hello, #{@name}!"\n  end\nend',
-	},
-	{
-		language: 'dart',
-		code: 'void main() {\n  print("Hello, Dart!");\n}\n',
-	},
-	{
-		language: 'kotlin',
-		code: 'fun main() {\n  println("Hello, Kotlin!")\n}',
-	},
-	{
-		language: 'swift',
-		code: 'enum Color {\n  case red, green, blue\n}\nlet selectedColor = Color.blue\nprint("Selected color: \\(selectedColor)")',
-	},
-	{
-		language: 'css',
-		code: 'body {\n  font-family: Arial, sans-serif;\n  background-color: #f0f0f0;\n}\n\nh1 {\n  color: #333;\n  text-align: center;\n}\n\np {\n  font-size: 16px;\n  line-height: 1.5;\n}',
-	},
-	{
-		language: 'csharp',
-		code: 'using System;\n\nclass Program {\n  static void Main() {\n    Console.WriteLine("C# is awesome!");\n  }\n}',
-	},
-	{
-		language: 'typescript',
-		code: 'function greet(name: string): string {\n  return `Hello, ${name}!`;\n}',
-	},
-	{
-		language: 'php',
-		code: "<?php\n$numbers = [1, 2, 3, 4, 5];\n$sum = array_sum($numbers);\necho 'Sum: ' . $sum . '\\n';\n?>",
-	},
-	{
-		language: 'go',
-		code: 'package main\n\nimport "fmt"\n\nfunc main() {\n  fmt.Println("Hello, Go!")\n}',
-	},
-	{
-		language: 'rust',
-		code: 'fn main() {\n  let numbers = [1, 2, 3, 4, 5];\n  let sum: i32 = numbers.iter().sum();\n  println!("Sum: {}", sum);\n}',
-	},
-];
+  {
+    language: 'python',
+    code: 'def greet(name):\n  return f"Hello, {name}!"',
+  },
+  {
+    language: 'javascript',
+    code: 'function calculateFactorial(n) {\n  if (n === 0 || n === 1) return 1;\n  return n * calculateFactorial(n - 1);\n}\nconsole.log(calculateFactorial(5));',
+  },
+  {
+    language: 'java',
+    code: 'public class HelloWorld {\n  public static void main(String[] args) {\n    System.out.println("Hello, World!");\n  }\n}',
+  },
+  {
+    language: 'c',
+    code: '#include <stdio.h>\n\nint main() {\n  printf("C Programming is fun!\\n");\n  return 0;\n}',
+  },
+  {
+    language: 'ruby',
+    code: 'class Person\n  attr_accessor :name\n\n  def initialize(name)\n    @name = name\n  end\n\n  def say_hello\n    puts "Hello, #{@name}!"\n  end\nend',
+  },
+  {
+    language: 'dart',
+    code: 'void main() {\n  print("Hello, Dart!");\n}\n',
+  },
+  {
+    language: 'kotlin',
+    code: 'fun main() {\n  println("Hello, Kotlin!")\n}',
+  },
+  {
+    language: 'swift',
+    code: 'enum Color {\n  case red, green, blue\n}\nlet selectedColor = Color.blue\nprint("Selected color: \\(selectedColor)")',
+  },
+  {
+    language: 'css',
+    code: 'body {\n  font-family: Arial, sans-serif;\n  background-color: #f0f0f0;\n}\n\nh1 {\n  color: #333;\n  text-align: center;\n}\n\np {\n  font-size: 16px;\n  line-height: 1.5;\n}',
+  },
+  {
+    language: 'csharp',
+    code: 'using System;\n\nclass Program {\n  static void Main() {\n    Console.WriteLine("C# is awesome!");\n  }\n}',
+  },
+  {
+    language: 'typescript',
+    code: 'function greet(name: string): string {\n  return `Hello, ${name}!`;\n}',
+  },
+  {
+    language: 'php',
+    code: "<?php\n$numbers = [1, 2, 3, 4, 5];\n$sum = array_sum($numbers);\necho 'Sum: ' . $sum . '\\n';\n?>",
+  },
+  {
+    language: 'go',
+    code: 'package main\n\nimport "fmt"\n\nfunc main() {\n  fmt.Println("Hello, Go!")\n}',
+  },
+  {
+    language: 'rust',
+    code: 'fn main() {\n  let numbers = [1, 2, 3, 4, 5];\n  let sum: i32 = numbers.iter().sum();\n  println!("Sum: {}", sum);\n}',
+  },
+  {
+    languages: 'scala',
+    code: 'object HelloWorld extends App {\n  println("Hello, Scala!")\n}',
+  },
+  {
+    languages: 'typescript',
+    code: 'function greet(name: string): string {\n  return `Hello, ${name}!`;\n}',
+  },
+  {
+    languages: 'c++',
+    code: '#include <iostream>\n\nint main() {\n  std::cout << "Hello, C++!" << std::endl;\n}',
+  },
+]

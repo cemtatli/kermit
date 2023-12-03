@@ -1,145 +1,139 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import useStore from '@/store';
+import useStore from '@/store'
 
-import { toBlob, toPng, toSvg } from 'html-to-image';
-import { toast } from 'react-hot-toast';
-import { useHotkeys } from 'react-hotkeys-hook';
+import { toBlob, toPng, toSvg } from 'html-to-image'
+import { toast } from 'react-hot-toast'
+import { useHotkeys } from 'react-hotkeys-hook'
 
-import { DownloadIcon, ClipboardCopyIcon, Link1Icon, Share2Icon } from "@radix-ui/react-icons";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DownloadIcon, ClipboardCopyIcon, Link1Icon, Share2Icon } from '@radix-ui/react-icons'
+import { Button } from '@/components/ui/button'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 
 export default function ExportOptions({ targetRef }) {
-  const title = useStore((state) => state.title);
+  const title = useStore(state => state.title)
 
   const copyImage = async () => {
     const loading = toast.loading(`${title} Copying...`, {
       style: {
-        borderRadius: "10px",
-        background: "#333",
-        color: "#fff",
+        borderRadius: '10px',
+        background: '#222',
+        color: '#fff',
       },
-    });
+    })
     try {
       const imgBlob = await toBlob(targetRef.current, {
         pixelRatio: 2,
-      });
-      const img = new ClipboardItem({ "image/png": imgBlob });
-      navigator.clipboard.write([img]);
-      toast.remove(loading);
-      toast("Image copied to clipboard!", {
-        icon: "👏",
+      })
+      const img = new ClipboardItem({ 'image/png': imgBlob })
+      navigator.clipboard.write([img])
+      toast.remove(loading)
+      toast('Image copied to clipboard!', {
+        icon: '👏',
         style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
+          borderRadius: '10px',
+          background: '#222',
+          color: '#fff',
         },
-      });
+      })
     } catch (error) {
-      toast.remove(loading);
-      toast.error("Something went wrong!", {
-        icon: "😔",
+      toast.remove(loading)
+      toast.error('Something went wrong!', {
+        icon: '😔',
         style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
+          borderRadius: '10px',
+          background: '#222',
+          color: '#fff',
         },
-      });
+      })
     }
-  };
+  }
 
   const copyLink = () => {
     try {
-      const state = useStore.getState();
+      const state = useStore.getState()
       const queryParams = new URLSearchParams({
         ...state,
         code: btoa(state.code),
-      }).toString();
-      navigator.clipboard.writeText(`${location.href}?${queryParams}`);
+      }).toString()
+      navigator.clipboard.writeText(`${location.href}?${queryParams}`)
 
-      toast.success("Link copied to clipboard!", {
-        icon: "👏",
+      toast.success('Link copied to clipboard!', {
+        icon: '👏',
         style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
+          borderRadius: '10px',
+          background: '#222',
+          color: '#fff',
         },
-      });
+      })
     } catch (error) {
-      toast.error("Something went wrong!", {
-        icon: "😔",
+      toast.error('Something went wrong!', {
+        icon: '😔',
         style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
+          borderRadius: '10px',
+          background: '#222',
+          color: '#fff',
         },
-      });
+      })
     }
-  };
+  }
 
   const saveImage = async (name, format) => {
     const loading = toast.loading(`Exporting ${format} image`, {
       style: {
-        borderRadius: "10px",
-        background: "#333",
-        color: "#fff",
+        borderRadius: '10px',
+        background: '#222',
+        color: '#fff',
       },
-    });
+    })
 
     try {
-      let imgUrl, filename;
+      let imgUrl, filename
       switch (format) {
-        case "PNG":
-          imgUrl = await toPng(targetRef.current, { pixelRatio: 2 });
-          filename = `${name}.png`;
-          break;
-        case "SVG":
-          imgUrl = await toSvg(targetRef.current, { pixelRatio: 2 });
-          filename = `${name}.svg`;
-          break;
+        case 'PNG':
+          imgUrl = await toPng(targetRef.current, { pixelRatio: 2 })
+          filename = `${name}.png`
+          break
+        case 'SVG':
+          imgUrl = await toSvg(targetRef.current, { pixelRatio: 2 })
+          filename = `${name}.svg`
+          break
 
         default:
-          return;
+          return
       }
 
-      const a = document.createElement("a");
-      a.href = imgUrl;
-      a.download = filename;
-      a.click();
+      const a = document.createElement('a')
+      a.href = imgUrl
+      a.download = filename
+      a.click()
 
-      toast.remove(loading);
-      toast.success("Exported successfully!", {
-        icon: "👏",
+      toast.remove(loading)
+      toast.success('Exported successfully!', {
+        icon: '👏',
         style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
+          borderRadius: '10px',
+          background: '#222',
+          color: '#fff',
         },
-      });
+      })
     } catch (error) {
-      toast.remove(loading);
-      toast.error("Something went wrong!", {
-        icon: "😔",
+      toast.remove(loading)
+      toast.error('Something went wrong!', {
+        icon: '😔',
         style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
+          borderRadius: '10px',
+          background: '#222',
+          color: '#fff',
         },
-      });
+      })
     }
-  };
+  }
 
-  useHotkeys("ctrl+c", copyImage);
-  useHotkeys("shift+ctrl+c", copyLink);
-  useHotkeys("ctrl+s", () => saveImage(title, "PNG"));
-  useHotkeys("shift+ctrl+s", () => saveImage(title, "SVG"));
+  useHotkeys('ctrl+c', copyImage)
+  useHotkeys('shift+ctrl+c', copyLink)
+  useHotkeys('ctrl+s', () => saveImage(title, 'PNG'))
+  useHotkeys('shift+ctrl+s', () => saveImage(title, 'SVG'))
 
   return (
     <DropdownMenu>
@@ -174,4 +168,4 @@ export default function ExportOptions({ targetRef }) {
 
 ExportOptions.propTypes = {
   targetRef: PropTypes.object,
-};
+}
